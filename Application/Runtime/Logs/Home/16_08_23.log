@@ -1,0 +1,179 @@
+[ 2016-08-23T21:24:24+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000440s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2016-08-23T22:03:52+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000130s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000109s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2016-08-23T22:21:21+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000129s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000170s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-08-23T22:27:43+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000095s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000107s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2016-08-23T22:27:46+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000080s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000104s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/ThinkPHP/ThinkPHP.php:35) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000216s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000237s ]
+
+[ 2016-08-23T22:47:09+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+NOTIC: [2] session_start(): open(/var/tmp//sess_52359849d8a6d3313ad5abeb7e7254f5, O_RDWR) failed: Permission denied (13) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000095s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000075s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000305s ]
+
+[ 2016-08-23T22:48:30+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2] session_start(): open(/var/tmp//sess_52359849d8a6d3313ad5abeb7e7254f5, O_RDWR) failed: Permission denied (13) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000071s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000222s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2016-08-23T22:56:03+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000264s ]
+NOTIC: [2] session_start(): open(/var/tmp//sess_52359849d8a6d3313ad5abeb7e7254f5, O_RDWR) failed: Permission denied (13) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Users/ethan/www/webroot/index.php:21) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000076s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/index.php:21) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/index.php:21) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/ethan/www/webroot/index.php:21) /Users/ethan/www/webroot/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2016-08-23T23:43:02+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000249s ]
+NOTIC: [2] session_start(): open(/var/tmp//sess_52359849d8a6d3313ad5abeb7e7254f5, O_RDWR) failed: Permission denied (13) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000230s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000260s ]
+
+[ 2016-08-23T23:43:48+08:00 ] ::1 /index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000244s ]
+NOTIC: [2] session_start(): open(/var/tmp//sess_52359849d8a6d3313ad5abeb7e7254f5, O_RDWR) failed: Permission denied (13) /Users/ethan/www/webroot/ThinkPHP/Common/functions.php 第 1263 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000266s ]
+
