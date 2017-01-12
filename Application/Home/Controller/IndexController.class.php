@@ -3,13 +3,17 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-		var_dump(__DIR__);
-		echo "123";
-		phpinfo();
+	phpinfo();
     }
-    public function add()
+    public function console_log($data)
     {
-        var_dump(__LINE__);
-        
+   	echo "<script>";
+	echo 'console.log('.json_encode($data).')';
+	echo "</script>";
+    }
+    public function add(&$a)
+    {
+     	$a = 5;
+	   
     }
 }
