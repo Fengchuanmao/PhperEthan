@@ -21,12 +21,12 @@ class Dispatcher {
      * @return void
      */
     static public function dispatch() {
-        $varPath        =   C('VAR_PATHINFO');
-        $varAddon       =   C('VAR_ADDON');
-        $varModule      =   C('VAR_MODULE');
-        $varController  =   C('VAR_CONTROLLER');
-        $varAction      =   C('VAR_ACTION');
-        $urlCase        =   C('URL_CASE_INSENSITIVE');
+        $varPath        =   C('VAR_PATHINFO');//s
+        $varAddon       =   C('VAR_ADDON');//addon
+        $varModule      =   C('VAR_MODULE');//m
+        $varController  =   C('VAR_CONTROLLER');//c
+        $varAction      =   C('VAR_ACTION');//a
+        $urlCase        =   C('URL_CASE_INSENSITIVE');//true
         if(isset($_GET[$varPath])) { // 判断URL里面是否有兼容模式参数
             $_SERVER['PATH_INFO'] = $_GET[$varPath];
             unset($_GET[$varPath]);
@@ -35,7 +35,7 @@ class Dispatcher {
         }
 
         // 开启子域名部署
-        if(C('APP_SUB_DOMAIN_DEPLOY')) {
+        if(C('APP_SUB_DOMAIN_DEPLOY')) {//false
             $rules      = C('APP_SUB_DOMAIN_RULES');
             if(isset($rules[$_SERVER['HTTP_HOST']])) { // 完整域名或者IP配置
                 define('APP_DOMAIN',$_SERVER['HTTP_HOST']); // 当前完整域名
@@ -64,7 +64,6 @@ class Dispatcher {
                     }
                 }                
             }
-
             if(!empty($rule)) {
                 // 子域名部署规则 '子域名'=>array('模块名[/控制器名]','var1=a&var2=b');
                 if(is_array($rule)){
@@ -95,7 +94,7 @@ class Dispatcher {
         }
         // 分析PATHINFO信息
         if(!isset($_SERVER['PATH_INFO'])) {
-            $types   =  explode(',',C('URL_PATHINFO_FETCH'));
+            $types   =  explode(',',C('URL_PATHINFO_FETCH'));//'ORIG_PATH_INFO,REDIRECT_PATH_INFO,REDIRECT_URL'
             foreach ($types as $type){
                 if(0===strpos($type,':')) {// 支持函数判断
                     $_SERVER['PATH_INFO'] =   call_user_func(substr($type,1));
@@ -108,9 +107,8 @@ class Dispatcher {
             }
         }
 
-        $depr = C('URL_PATHINFO_DEPR');
-        define('MODULE_PATHINFO_DEPR',  $depr);
-
+        $depr = C('URL_PATHINFO_DEPR');// '/'
+        define('MODULE_PATHINFO_DEPR',  $depr);// '/'
         if(empty($_SERVER['PATH_INFO'])) {
             $_SERVER['PATH_INFO'] = '';
             define('__INFO__','');
@@ -137,16 +135,16 @@ class Dispatcher {
         define('__SELF__',strip_tags($_SERVER[C('URL_REQUEST_URI')]));
 
         // 获取模块名称
-        define('MODULE_NAME', defined('BIND_MODULE')? BIND_MODULE : self::getModule($varModule));
+        define('MODULE_NAME', defined('BIND_MODULE')? BIND_MODULE : self::getModule($varModule));// Home
         
         // 检测模块是否存在
         if( MODULE_NAME && (defined('BIND_MODULE') || !in_array_case(MODULE_NAME,C('MODULE_DENY_LIST')) ) && is_dir(APP_PATH.MODULE_NAME)){
             // 定义当前模块路径
-            define('MODULE_PATH', APP_PATH.MODULE_NAME.'/');
+            define('MODULE_PATH', APP_PATH.MODULE_NAME.'/');//Application/Home
             // 定义当前模块的模版缓存路径
-            C('CACHE_PATH',CACHE_PATH.MODULE_NAME.'/');
+            C('CACHE_PATH',CACHE_PATH.MODULE_NAME.'/');//Runtime/Cache/Home/
             // 定义当前模块的日志目录
-	        C('LOG_PATH',  realpath(LOG_PATH).'/'.MODULE_NAME.'/');
+	        C('LOG_PATH',  realpath(LOG_PATH).'/'.MODULE_NAME.'/');//Runtime/Logs/Home/
 
             // 模块检测
             Hook::listen('module_check');
@@ -171,15 +169,14 @@ class Dispatcher {
             if(is_file(MODULE_PATH.'Common/function.php'))
                 include MODULE_PATH.'Common/function.php';
             
-            $urlCase        =   C('URL_CASE_INSENSITIVE');
+            $urlCase        =   C('URL_CASE_INSENSITIVE');//false 区分大小写
             // 加载模块的扩展配置文件
             load_ext_file(MODULE_PATH);
         }else{
             E(L('_MODULE_NOT_EXIST_').':'.MODULE_NAME);
         }
-
         if(!defined('__APP__')){
-	        $urlMode        =   C('URL_MODEL');
+	        $urlMode        =   C('URL_MODEL');//1 url访问模式path_info模式
 	        if($urlMode == URL_COMPAT ){// 兼容模式判断
 	            define('PHP_FILE',_PHP_FILE_.'?'.$varPath.'=');
 	        }elseif($urlMode == URL_REWRITE ) {
@@ -188,16 +185,16 @@ class Dispatcher {
 	                $url    =   '';
 	            define('PHP_FILE',$url);
 	        }else {
-	            define('PHP_FILE',_PHP_FILE_);
+	            define('PHP_FILE',_PHP_FILE_);//index.php
 	        }
 	        // 当前应用地址
-	        define('__APP__',strip_tags(PHP_FILE));
+	        define('__APP__',strip_tags(PHP_FILE));///index.php
 	    }
         // 模块URL地址
-        $moduleName    =   defined('MODULE_ALIAS')? MODULE_ALIAS : MODULE_NAME;
-        define('__MODULE__',(defined('BIND_MODULE') || !C('MULTI_MODULE'))? __APP__ : __APP__.'/'.($urlCase ? strtolower($moduleName) : $moduleName));
+        $moduleName    =   defined('MODULE_ALIAS')? MODULE_ALIAS : MODULE_NAME;//Home
+        define('__MODULE__',(defined('BIND_MODULE') || !C('MULTI_MODULE'))? __APP__ : __APP__.'/'.($urlCase ? strtolower($moduleName) : $moduleName));///index.php/Home
 
-        if('' != $_SERVER['PATH_INFO'] && (!C('URL_ROUTER_ON') ||  !Route::check()) ){   // 检测路由规则 如果没有则按默认规则调度URL
+        if('' != $_SERVER['PATH_INFO'] && (!C('URL_ROUTER_ON') ||  !Route::check()) ){   // 检测路由规则 如果没有则按默认规则调度URL ****************************************************
             Hook::listen('path_info');
             // 检查禁止访问的URL后缀
             if(C('URL_DENY_SUFFIX') && preg_match('/\.('.trim(C('URL_DENY_SUFFIX'),'.').')$/i', $_SERVER['PATH_INFO'])){
@@ -234,14 +231,14 @@ class Dispatcher {
             $_GET   =  array_merge($var,$_GET);
         }
         // 获取控制器的命名空间（路径）
-        define('CONTROLLER_PATH',   self::getSpace($varAddon,$urlCase));
+        define('CONTROLLER_PATH',   self::getSpace($varAddon,$urlCase));//''
         // 获取控制器和操作名
-        define('CONTROLLER_NAME',   defined('BIND_CONTROLLER')? BIND_CONTROLLER : self::getController($varController,$urlCase));
-        define('ACTION_NAME',       defined('BIND_ACTION')? BIND_ACTION : self::getAction($varAction,$urlCase));
+        define('CONTROLLER_NAME',   defined('BIND_CONTROLLER')? BIND_CONTROLLER : self::getController($varController,$urlCase));//Index
+        define('ACTION_NAME',       defined('BIND_ACTION')? BIND_ACTION : self::getAction($varAction,$urlCase));//index
 
         // 当前控制器的UR地址
-        $controllerName    =   defined('CONTROLLER_ALIAS')? CONTROLLER_ALIAS : CONTROLLER_NAME;
-        define('__CONTROLLER__',__MODULE__.$depr.(defined('BIND_CONTROLLER')? '': ( $urlCase ? parse_name($controllerName) : $controllerName )) );
+        $controllerName    =   defined('CONTROLLER_ALIAS')? CONTROLLER_ALIAS : CONTROLLER_NAME;//Index
+        define('__CONTROLLER__',__MODULE__.$depr.(defined('BIND_CONTROLLER')? '': ( $urlCase ? parse_name($controllerName) : $controllerName )) );//index.php/Home   index.php/Home/Index
 
         // 当前操作的URL地址
         define('__ACTION__',__CONTROLLER__.$depr.(defined('ACTION_ALIAS')?ACTION_ALIAS:ACTION_NAME));
@@ -320,7 +317,7 @@ class Dispatcher {
      * 获得实际的模块名称
      */
     static private function getModule($var) {
-        $module   = (!empty($_GET[$var])?$_GET[$var]:C('DEFAULT_MODULE'));
+        $module   = (!empty($_GET[$var])?$_GET[$var]:C('DEFAULT_MODULE'));//HOME
         unset($_GET[$var]);
         if($maps = C('URL_MODULE_MAP')) {
             if(isset($maps[strtolower($module)])) {
@@ -333,7 +330,7 @@ class Dispatcher {
                 return   '';
             }
         }
-        return strip_tags(ucfirst($module));
+        return strip_tags(ucfirst($module));//HOME
     }
 
 }

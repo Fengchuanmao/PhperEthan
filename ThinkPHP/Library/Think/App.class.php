@@ -35,9 +35,9 @@ class App {
         define('IS_DELETE',     REQUEST_METHOD =='DELETE' ? true : false);
 
         // URL调度
-        Dispatcher::dispatch();
+        Dispatcher::dispatch();/****************************************url调度*******************************************/
 
-        if(C('REQUEST_VARS_FILTER')){
+        if(C('REQUEST_VARS_FILTER')){//无
 			// 全局安全过滤
 			array_walk_recursive($_GET,		'think_filter');
 			array_walk_recursive($_POST,	'think_filter');
